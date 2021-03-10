@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pouya Salehi</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Courier+Prime&family=Eczar:wght@600&family=Euphoria+Script&family=Open+Sans:wght@300;400&family=Quicksand:wght@300&family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="icon" href="res/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+    <div class="welcome">
+        <div class="h header-text">Pouya Salehi</div>
+        <div class="p">Born to be a programmer</div>
+        <div class="nav-buttons">
+            <a href="#projects" class="navigation-button"><span>Projects</span></a>
+            <a href="#skills" class="navigation-button"><span>Skills</span></a>
+            <a href="#photography" class="navigation-button"><span>Photography</span></a>
+            <a href="#contact" class="navigation-button"><span>Contact</span></a>
+            <script>
+
+                function isElementInViewport (el) {
+                      //special bonus for those using jQuery
+                      if (typeof jQuery === "function" && el instanceof jQuery) {
+                        el = el[0];
+                      }
+                      var rect = el.getBoundingClientRect();
+                      return (
+                        rect.top >= 0 &&
+                        rect.left >= 0 &&
+                        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
+                        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+                      );
+                    }
+                
+                
+                    // click-to-scroll behavior
+                    $("a").click(function (e) {
+                      e.preventDefault();
+                      var section = this.href;
+                      var sectionClean = section.substring(section.indexOf("#"));
+                      $("html, body").animate({
+                        scrollTop: $(sectionClean).offset().top
+                      }, 1000, function () {
+                        window.location.hash = sectionClean;
+                      });
+                    });
+                    
+                    // listen for the scroll event
+                    $(document).on("scroll", function() {
+                      //console.log("onscroll event fired...");
+                      // check if the anchor elements are visible
+                      $(".common").each(function (idx, el) {
+                        if ( isElementInViewport(el) ) {
+                          // update the URL hash
+                          if (window.history.pushState) {
+                            var urlHash = "#" + $(el).attr("id");
+                            window.history.pushState(null, null, urlHash);
+                          }
+                        }
+                      });
+                    });
+                
+                
+            </script>
+        </div>
+    </div>
+    <hr>
+    <div class="clouds">
+        <img class="cloud c1" src="res/cloud.svg" alt="cloud">
+        <div></div>
+        <img class="cloud c2" src="res/cloud.svg" alt="cloud">
+    </div>
+    <div class="intro">
+        <img style="max-width: 200px;" src="res/circle-cropped.png" alt="Me">
+        <div style="margin-top: 10px;font-family: 'Eczar', serif;">I love coffee and memes</div>
+        <img style="max-width: 50px;" src="res/coffee.svg" alt="Coffee">
+        <div style="font-family: 'Open Sans', sans-serif;">I usually spend my time coding or playing video games</div>
+    </div>
+
+    
+
+    <div id="whoami" class="heading">
+        <img class="mobile-first-img" src="res/phoneChat.png" alt="Phone">
+        <div class="details">
+            <span>Mobile App Developer</span>
+            <div>I am a mobile app developer with more than 3 years of experience in building amazing mobile applications for both iOS and Android devices! I am very passionate about my works and what I do.</div>
+        </div>
+        <img class="mobile-img" src="res/webDev.svg" alt="Website">
+        <div class="details d2">
+            <span>Web Developer</span>
+            <div>I also love developing and designing websites! I have more than 2 years experience in building complex back-ends. I also started designing websites recently. I hope I can keep myself up!</div>
+        </div>
+        <img class="mobile-img2" src="res/webDev.svg" alt="Website">
+    </div>
+
+
+
+    <div id="projects" class="heading accent">
+        <div class="header-text">Projects</div>
+        <ul>
+            <li>
+                <img src="res/Date.svg" alt="Date">
+                <span class="project">
+                    <div>Dating App</div>
+                    <span>A secret project idea like Tinder The app is already developed for Android devices. Currently working on the app for iOS devices.</span>
+                </span>
+            </li>
+            <li>
+                <img src="res/increase.svg" alt="Graph">
+                <span class="project">
+                    <div>Data Analysis Project</div>
+                    <span>A Telegram bot that uses Pandas library to process complex data and give daily report from the current data.</span>
+                </span>
+            </li>
+            <li>
+                <img src="res/instagram bot.png" alt="Instagram Bot">
+                <span class="project">
+                    <div>Instagram Bot</div>
+                    <span>Instagram Bot using Python and Selenium. The bot will sign up, follow you, comment and like your posts!</span>
+                </span>
+            </li>
+            <li>
+                <img src="res/postman.svg" alt="Postman">
+                <span class="project">
+                    <div>Postman API</div>
+                    <span>A simple API client for GET, POST, PUT and DELETE requests using Python.</span>
+                </span>
+            </li>
+        </ul>
+    </div>
+    
+
+
+    <div id="skills" class="heading dark">
+        <div class="header-text">Skills</div>
+        <div class="half-circle"></div>
+        <ul>
+            <li>
+                <span>Mobile App Development</span>
+                <div class="rectangle r1"></div>
+            </li>
+            <li>
+                <span>Data Automation</span>
+                <div class="rectangle r2"></div>
+            </li>
+            <li>
+                <span>Web Development</span>
+                <div class="rectangle r3"></div>
+            </li>
+            <li>
+                <span>Desktop App Development</span>
+                <div class="rectangle r4"></div>
+            </li>
+        </ul>
+
+       
+    </div>
+
+
+
+    <div id="photography" class="heading accent">
+        <div class="header-text">Photography</div>
+        <div class="pp">Here you can find some of my cool photos!</div>
+        
+        <main class="gallery">
+            <ul class="gallery__list">
+              <li>
+                <figure>
+                  <img src="res/photography/vertical2.jpg" alt="A first look at dunes">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="res/photography/normal1.jpg" alt="K2-138 6 Planets Artwork (Artist's Illustration) ">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="res/photography/vertical1.jpg" alt="Small Prominences">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="res/photography/horizental1.jpg" alt="Ezinu Crater">
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="res/photography/horizental2.jpg" alt="Jupiter">
+                </figure>
+              </li>
+              
+            </ul>
+          </main>
+    </div>
+
+
+
+    <div id="contact" class="heading dark">
+        <div style="top: 10%" class="half-circle"></div>
+        <div class="copyright dark">COPYRIGHT © POUYA SALEHI</div>
+        <div class="header-text">Contact Me</div>
+        <div class="outer-contact">
+            <div class="hexagon-contact">
+                <div class="find-me">Find Me</div>
+                <div class="info">
+                    <img src="res/email.svg" alt="Mail">
+                    <a style="text-decoration: none;" href="mailto:pouya.ps.salehi@gmail.com"><span><b>pouya.ps.salehi@gmail.com</b></span></a>
+                </div>
+                <div class="info">
+                    <img src="res/phone.svg" alt="Phone">
+                    <span><b>+1 778 512 7227</b></span>
+                </div>
+                <div class="imgs-links">
+                    <a href="https://www.instagram.com/pouyad_ai/" target="_blank"><img src="res/instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.linkedin.com/in/pouya-salehi-9437821a8/" target="_blank"><img src="res/linkedin.svg" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    
+</body>
+</html>
