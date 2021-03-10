@@ -31,15 +31,16 @@ html, body {
 
 /* Welcome Section */
 
-@media screen and (min-width: 1200px) {
-    .welcome {
-        background: url(res/laptop.jpg);
-    }
-}
 .welcome {
     overflow: hidden;
-    background: #a2a2a3
+    background: #e2e2e2;
     height: 700px;
+}
+
+@media screen and (min-width: 1200px) {
+    .welcome {
+        background: url(../res/laptop.jpg);
+    }
 }
 
 .welcome .h {
