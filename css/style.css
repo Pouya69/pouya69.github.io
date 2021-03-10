@@ -30,9 +30,15 @@ html, body {
 /* --Sections-- */
 
 /* Welcome Section */
+
+@media screen and (min-width: 1200px) {
+    .welcome {
+        background: url(res/laptop.jpg);
+    }
+}
 .welcome {
     overflow: hidden;
-    background-image: url(../res/laptop.jpg);
+    background: #a2a2a3
     height: 700px;
 }
 
