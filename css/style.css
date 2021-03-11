@@ -34,12 +34,23 @@ html, body {
 .welcome {
     overflow: hidden;
     background: #e2e2e2;
+    background-size: cover;
     height: 700px;
 }
 
 @media screen and (min-width: 1200px) {
     .welcome {
         background: url(../res/laptop.jpg);
+    }
+}
+
+@media screen and (min-width: 1603px) {
+    .welcome {
+        background: #e2e2e2;
+    }
+    .nav-buttons {
+        position: relative;
+        left: 20%;
     }
 }
 
