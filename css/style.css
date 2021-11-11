@@ -85,7 +85,7 @@ html, body {
     margin-left: 15px;
 }
 
- 
+
 .navigation-button:hover {
     border: solid #004DBB 1px;
     background-color: #010a16;
@@ -179,7 +179,7 @@ hr {
         max-width: 1000px;
         margin: 0;
     }
-    
+
     .mobile-first-img {
         right: 0;
     }
@@ -342,7 +342,7 @@ ul {
     main.gallery {
         padding: 2rem;
     }
-      
+
     .gallery > .gallery__list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
@@ -350,17 +350,17 @@ ul {
         grid-gap: 1rem;
         grid-auto-flow: dense;
     }
-      
+
     .gallery > .gallery__list > li:nth-child(4n) {
         grid-column: span 2;
         grid-row: span 2;
     }
-      
-      
+
+
     .gallery > .gallery__list > li > figure {
         height: 100%;
     }
-      
+
     .gallery > .gallery__list > li > figure > img {
         width: 100%;
         height: 100%;
